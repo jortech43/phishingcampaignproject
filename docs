@@ -39,9 +39,6 @@ This repo does **not** include operational steps to run an actual phishing campa
 - Keep any sensitive credentials offline and never commit secrets to VCS.
 - Always document scope and obtain written authorization for any simulation involving third parties.
 
-Refer to official vendor docs and your organization’s policies for safe setup instructions.
-
----
 
 ## Contact
 
