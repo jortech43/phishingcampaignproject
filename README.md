@@ -4,7 +4,7 @@ This project reproduces a phishing simulation in a lab to study attacker techniq
 
 # GoPhish Lab — Phishing Simulation & Analysis (Sanitized)
 
-**Author:** Jarvis (assistant) & Creator  
+**Moderator:** Jorge A. Nava
 **Project type:** Educational lab / research artifact (private lab environment)  
 **Status:** Sanitized for public sharing — no operational attack steps included.
 
@@ -29,5 +29,5 @@ This project reproduces a phishing simulation in a lab to study attacker techniq
 
 ---
 
-## Repo structure
+
 
