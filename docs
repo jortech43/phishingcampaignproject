@@ -26,8 +26,7 @@ High-level methodology (non-actionable)
 
 ## What we publish (sanitized examples)
 
-- `artifacts/sanitized_output.csv` — a mock CSV showing campaign results with all email addresses anonymized and credentials replaced with `<REDACTED>`.
-- `artifacts/screenshots/` — screenshots with all PII and credentials blurred or removed.
+- `gophishproject' folder —  a mock CSV (screenshot) showing campaign results with all email addresses anonymized and with all PII and credentials blurred or removed.
 
 
 ## Reproducibility & prerequisites (safe instructions)
