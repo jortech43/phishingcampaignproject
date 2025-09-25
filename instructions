@@ -1,1 +1,59 @@
+This is for educational purposes only, I do NOT condone any illegal activity.
+Ensure to install a virtualbox before participating in this exercise
 
+Step 1 Create a GoPhish web server on the linux terminal
+	$ gophish
+	$ /opt/gophish
+	$./gophish
+
+*Ensure target user account has Two-Factor Authentication (2FA) turned off on manage Gmail account, so you can use ‘App password’ on the security tab of the managed Gmail page
+
+	Copy generated password when creating app password and paste it on ‘password: ‘ on sending profile setting (refer to step 2)
+
+Step 2 Create a Sending Profile
+Type first name, last name, and email of the target user account
+	Optional to send test email to the target, only to check if smtp works on your end
+
+Step 3 Create a Landing Page
+	Type the name of the landing page your target would see
+		To create an html template, go to the linux terminal and type:
+			$ cd /usr/share/set/src/html/templates/google
+			$ ls
+			$ open index.template
+	On the template, right click and go to view page source. Copy the html format and paste it on the html box in the landing page settings. Check ‘capture submitted data’ and ‘capture passwords’
+
+	Located at the bottom of Landing Page settings, type ‘https://account.google.com’ on the ‘Redirect to: ‘ bar
+
+*Ensure you are saving the profiles on each step
+
+Step 4 Create Email Templates
+On a real 2FA or google email notification (or a verified email of your choice), open the email and click the three vertical dots on the right. Click ‘<show original’ then copy the clipboard. Paste the clipboard on the orange box ‘Import Email’. 
+	Ensure to type the name of the email (in this case, type Google).
+	Type target email user on Envelope Sender:
+	Type the subject of the email (of what you want the target user to see)
+	You paste the clipboard where it says ‘Text/ HTML: ‘
+	Check Add tracking image and save 
+
+Step 5 Add new  Users & Groups
+
+Using this tool will allow you to send multiple emails to more than one user account
+Ensure to name of the Email
+On ‘+Bulk Import User’, you are able to put a CSV template consisting of multiple emails
+Or you can add an individual account where it asks for first name, last name, and email. Then, you click ‘+Add’. Ensure to save Users & Groups
+
+Step 6 Create a New Campaign
+Type name of your choice for the campaign
+Add your Landing Page and Email Template
+Type the IP address from where GoPhish Phishing Campaign is running
+Enter Launch Date, it also gives you the option of when to launch
+Add sending profile and Groups, now launch.
+
+*Once your phishing campaign has been launched, you will be able to see the time it was sent and received. By clicking the ‘Export CSV button, you are able to see the raw events (login credentials of target email user) and the complete results of the campaign
+
+I have attached screenshots of the phishing campaign, each image demonstrating how the tabs and settings are shown on GoPhish
+For company analysis and report, please sanitize the CSV results if you can. 
+Ensure to:
+    Export only sanitized CSVs and scrub any credentials, IP addresses, timestamps tied to real people, or other PII before storing in the repository.
+    Use exported metadata (counts, anonymized timestamps, and anonymized identifiers) to demonstrate findings without revealing sensitive information.
+The images shown are used in a controlled lab, no harm or real email accounts have been targeted but my own devices at home.
+This exercise is for educational purposes only, spreading awareness about phishing attacks
