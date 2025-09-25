@@ -1,0 +1,62 @@
+
+---
+
+## High-level methodology (non-actionable)
+
+1. **Objective:** Evaluate how well simulated phishing lures can capture credential submissions within an isolated lab and to measure detection capability using network and host logging.
+2. **Scope:** All tests were performed on local virtual machines and test accounts created specifically for the lab. No third-party or real user accounts were targeted.
+3. **Data handling:** All captured data was stored locally, analyzed, and then sanitized before publication. No real credentials or personally identifying information (PII) appear in this repository.
+4. **Analysis goals:** Examine captured HTTP request metadata, timestamps, source IPs, and campaign tracking artifacts to identify detection opportunities (e.g., unusual user agents, redirection patterns, repeated submission endpoints).
+
+> For reproducible, safe, and up-to-date installation/configuration steps refer to the official GoPhish documentation or vendor resources — **do not** rely on or publish attack playbooks in this repo.
+
+---
+
+## Key findings (summary)
+
+- Simulated credential capture can often be detected by monitoring unusual endpoint POST activity to non-standard account pages.
+- Adding multi-layer logging (network flow logs + host process logs) increases detection probability.
+- Email phishing templates that deviate slightly from legitimate headers and assets are detectable through header analysis and mismatch checks.
+
+---
+
+## Defensive recommendations & mitigations (high level)
+
+- Enforce MFA (multi-factor authentication) that cannot be bypassed with single-use app passwords.
+- Apply email authentication standards: SPF, DKIM, and DMARC.
+- Use email gateway filtering and link rewriting for user-visible warnings.
+- Log and alert on unusual POST/credential submission events, suspicious referrers, and mismatched hostnames.
+- Conduct regular security-awareness training and phishing simulations with user consent and tracking of remediation.
+
+---
+
+## What we publish (sanitized examples)
+
+- `artifacts/sanitized_output.csv` — a mock CSV showing campaign results with all email addresses anonymized and credentials replaced with `<REDACTED>`.
+- `artifacts/screenshots/` — screenshots with all PII and credentials blurred or removed.
+- `templates/sanitized_template.html` — a harmless HTML mockup with placeholder text only.
+
+---
+
+## Reproducibility & prerequisites (safe instructions)
+
+This repo does **not** include operational steps to run an actual phishing campaign. If you are reproducing experiments in a lab for learning or defensive research, follow these safe rules:
+
+- Use isolated virtual networks and throwaway test accounts you control.
+- Ensure all software used is up-to-date and run with least privileges.
+- Keep any sensitive credentials offline and never commit secrets to VCS.
+- Always document scope and obtain written authorization for any simulation involving third parties.
+
+Refer to official vendor docs and your organization’s policies for safe setup instructions.
+
+---
+
+## License
+
+This repo is licensed for educational use only. See `LICENSE` for details.
+
+---
+
+## Contact
+
+For questions about the write-up, scope, or defensive findings, open an issue or contact me via the repository issue tracker.
